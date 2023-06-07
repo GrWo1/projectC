@@ -5,10 +5,11 @@ certifi==2023.5.7
 cffi==1.15.1
 charset-normalizer==3.1.0
 cryptography==41.0.1
-Django==4.2.2
+Django==2.2.16
 idna==3.4
 pycparser==2.21
 pyOpenSSL==23.2.0
+pytz==2023.3
 requests==2.31.0
 soupsieve==2.4.1
 sqlparse==0.4.4
