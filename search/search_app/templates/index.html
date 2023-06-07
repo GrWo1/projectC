@@ -1,0 +1,36 @@
+<!-- search.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Поиск</h1>
+    <input type="text" id="searchInput" placeholder="Найти...">
+    <ul id="searchResults"></ul>
+
+    <script>
+        $(document).ready(function() {
+            $('#searchInput').keyup(function() {
+                var query = $(this).val();
+                $.ajax({
+                    url: '/search_view/',
+                    data: {
+                        'query': query
+                    },
+                    success: function(response) {
+                        var results = response;
+                        var resultList = $('#searchResults');
+                        resultList.empty();
+                        for (var i = 0; i < results.length; i++) {
+                            resultList.append('<li>' + results[i] + '</li>');
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
